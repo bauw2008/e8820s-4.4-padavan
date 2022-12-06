@@ -62,9 +62,9 @@ adg_file="/etc/storage/adg.sh"
 if [ ! -f "$adg_file" ] || [ ! -s "$adg_file" ] ; then
 	cat > "$adg_file" <<-\EEE
 bind_host: 0.0.0.0
-bind_port: 3030
-auth_name: adguardhome
-auth_pass: adguardhome
+bind_port: 3000
+auth_name: admin
+auth_pass: admin
 language: zh-cn
 rlimit_nofile: 0
 dns:
@@ -79,6 +79,7 @@ dns:
   ratelimit_whitelist: []
   refuse_any: true
   bootstrap_dns:
+  - 119.29.29.29
   - 223.5.5.5
   all_servers: true
   allowed_clients: []
@@ -90,7 +91,10 @@ dns:
   safebrowsing_enabled: false
   resolveraddress: ""
   upstream_dns:
-  - 223.5.5.5
+  - tls://dns.pub
+  - https://dns.pub/dns-query
+  - tls://dns.alidns.com
+  - https://dns.alidns.com/dns-query
 tls:
   enabled: false
   server_name: ""
