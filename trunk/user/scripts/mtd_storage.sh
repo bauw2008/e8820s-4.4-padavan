@@ -560,7 +560,7 @@ EOF
 		cat > "$user_hosts" <<EOF
 # Custom user hosts file
 # Example:
-# 192.168.1.100		Boo
+  10.0.0.1 op
 
 EOF
 		chmod 644 "$user_hosts"
