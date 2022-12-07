@@ -63,8 +63,8 @@ if [ ! -f "$adg_file" ] || [ ! -s "$adg_file" ] ; then
 	cat > "$adg_file" <<-\EEE
 bind_host: 0.0.0.0
 bind_port: 3000
-auth_name: admin
-auth_pass: admin
+auth_name: ropt
+auth_pass: root
 language: zh-cn
 rlimit_nofile: 0
 dns:
