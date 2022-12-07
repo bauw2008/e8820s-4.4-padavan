@@ -1,44 +1,19 @@
-# padavan #
+ # padavan #
 
-This project is based on original rt-n56u with latest mtk 4.4.198 kernel, which is fetch from D-LINK GPL code.
+ - 优化 Makefiles 和构建脚本，添加了顶层 Makefile
+ - 添加了缓存支持，最多可节省 50% 以上的构建时间
+ - Upgraded the toolchain and libc:
+ - gcc 10.3.0
+ - uClibc-ng 1.0.42
+ - 启用内核 cgroups 支持
+ - e8820s led显示修复
+ - msd_lite 替换了 udpxy
+ - ttyd 替换 Web 控制台
+ - ip 10.0.0.1 admin/admin
+ - hosts：10.0.0.1 op
+ - adguardhome 放路径/opt/adg/ 端口3000 admin/admin
+ - 添加chongshengB/rt-n56u菜单定制。
+ - e8820s无线led灯显示修复。
 
-##### Enhancements in this repo
 
-- commits has beed rewritten on top of [hanwckf/rt-n56u](https://github.com/hanwckf/rt-n56u) repo for better history tracking
-- Optimized Makefiles and build scripts, added a toplevel Makefile
-- Added ccache support, may save up to 50%+ build time
-- Upgraded the toolchain and libc:
-  - gcc 10.3.0
-  - uClibc-ng 1.0.42
- - Enabled kernel cgroups support
- - Fixed K2P led label names
- - Replaced udpxy with msd_lite
- - Replaced Web Console with ttyd
- - Upgraded libs and user packages
- - And a lot of package related fixes
- - ...
-
-# Features
-
-- Based on 4.4.198 Linux kernel
-- Support MT7621 based devices
-- Support MT7615D/MT7615N/MT7915D wireless chips
-- Support raeth and mt7621 hwnat with legency driver
-- Support qca shortcut-fe
-- Support IPv6 NAT based on netfilter
-- Support WireGuard integrated in kernel
-- Support fullcone NAT (by Chion82)
-- Support LED&GPIO control via sysfs
-
-padavan-4.4 修改
-
-1.后台地址10.0.0.1 admin/admin 默认hosts 值修改10.0.0.1 op
-
-2.udpxy替换msd_lite
-
-3.adguardhome 放置路径/opt/adg/ 端口3000 admin/admin
-
-4.添加chongshengB/rt-n56u菜单定制。
-
-5.e8820s 无线led灯显示修复。
 
