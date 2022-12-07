@@ -108,10 +108,22 @@ filters:
   url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
   name: AdGuard Simplified Domain Names filter
   id: 1
-- enabled: true
+  - enabled: true
   url: https://adaway.org/hosts.txt
   name: AdAway
   id: 2
+- enabled: true
+  url: https://raw.hellogithub.com/hosts
+  name: GitHub-hosts
+  id: 1666724350
+- enabled: false
+  url: https://anti-ad.net/easylist.txt
+  name: 'CHN: anti-AD'
+  id: 1666257450
+- enabled: true
+  url: https://cats-team.github.io/AdRules/dns.txt
+  name: AdRules
+  id: 1666257451
 user_rules: []
 dhcp:
   enabled: false
@@ -133,22 +145,22 @@ fi
 }
 
 
-
 start_adg(){
-    mkdir -p /tmp/AdGuardHome
+        mkdir -p /opt/tmp/AdGuardHome
 	mkdir -p /etc/storage/AdGuardHome
-	if [ ! -f "/tmp/AdGuardHome/AdGuardHome" ]; then
-	cp /usr/bin/AdGuardHome /tmp/AdGuardHome/AdGuardHome
+	if [ ! -f "/opt/tmp/AdGuardHome/AdGuardHome" ]; then
+	cp /opt/adg/AdGuardHome /opt/tmp/AdGuardHome/AdGuardHome
+	chmod 777 /opt/tmp/AdGuardHome/AdGuardHome
 	fi
 	getconfig
 	change_dns
 	set_iptable
 	logger -t "AdGuardHome" "运行AdGuardHome"
-	eval "/tmp/AdGuardHome/AdGuardHome -c $adg_file -w /tmp/AdGuardHome -v" &
+	eval "/opt/tmp/AdGuardHome/AdGuardHome -c $adg_file -w /opt/tmp/AdGuardHome -v" &
 
 }
 stop_adg(){
-rm -rf /tmp/AdGuardHome
+rm -rf /opt/tmp/AdGuardHome
 killall -9 AdGuardHome
 del_dns
 clear_iptable
