@@ -63,7 +63,7 @@ if [ ! -f "$adg_file" ] || [ ! -s "$adg_file" ] ; then
 	cat > "$adg_file" <<-\EEE
 bind_host: 0.0.0.0
 bind_port: 3000
-auth_name: ropt
+auth_name: root
 auth_pass: root
 language: zh-cn
 rlimit_nofile: 0
@@ -146,21 +146,22 @@ fi
 
 
 start_adg(){
-        mkdir -p /opt/tmp/AdGuardHome
+        chmod 777 /opt/adg/AdGuardHome
+        mkdir -p /tmp/AdGuardHome
 	mkdir -p /etc/storage/AdGuardHome
-	if [ ! -f "/opt/tmp/AdGuardHome/AdGuardHome" ]; then
-	cp /opt/adg/AdGuardHome /opt/tmp/AdGuardHome/AdGuardHome
-	chmod 777 /opt/tmp/AdGuardHome/AdGuardHome
+	if [ ! -f "/tmp/AdGuardHome/AdGuardHome" ]; then
+	cp /opt/adg/AdGuardHome /tmp/AdGuardHome/AdGuardHome
+
 	fi
 	getconfig
 	change_dns
 	set_iptable
 	logger -t "AdGuardHome" "运行AdGuardHome"
-	eval "/opt/tmp/AdGuardHome/AdGuardHome -c $adg_file -w /opt/tmp/AdGuardHome -v" &
+	eval "/tmp/AdGuardHome/AdGuardHome -c $adg_file -w /tmp/AdGuardHome -v" &
 
 }
 stop_adg(){
-rm -rf /opt/tmp/AdGuardHome
+rm -rf /tmp/AdGuardHome
 killall -9 AdGuardHome
 del_dns
 clear_iptable
