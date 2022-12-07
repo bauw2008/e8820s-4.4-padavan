@@ -8,9 +8,44 @@ size_tmp="24M"
 size_var="4M"
 size_etc="6M"
 
-if [ "$1" == "-l" ] ; then
+if [ "$1" == "-4" ] ; then
+	size_etc="4M"
+fi
+if [ "$1" == "-8" ] ; then
+	size_etc="4M"
+fi
+if [ "$1" == "-16" ] ; then
+	size_etc="4M"
+fi
+if [ "$1" == "-32" ] ; then
+	size_etc="20M"
+fi
+
+if [ "$2" == "-32" ] ; then
 	size_tmp="8M"
-	size_var="1M"
+fi
+if [ "$2" == "-64" ] ; then
+	size_tmp="28M"
+fi
+if [ "$2" == "-128" ] ; then
+	size_tmp="40M"
+	if [ "$1" == "-NAND" ] ; then
+		size_etc="20M"
+	fi
+fi
+if [ "$2" == "-256" ] ; then
+	size_tmp="40M"
+	if [ "$1" == "-NAND" ] ; then
+		size_tmp="80M"
+		size_etc="70M"
+	fi
+fi
+if [ "$2" == "-512" ] ; then
+	size_tmp="40M"
+	if [ "$1" == "-NAND" ] ; then
+		size_tmp="80M"
+		size_etc="70M"
+	fi
 fi
 
 mount -t tmpfs tmpfs /dev   -o size=8K
