@@ -30,3 +30,15 @@ This project is based on original rt-n56u with latest mtk 4.4.198 kernel, which 
 - Support fullcone NAT (by Chion82)
 - Support LED&GPIO control via sysfs
 
+padavan-4.4 修改
+
+1.后台地址10.0.0.1 admin/admin 默认hosts 值修改10.0.0.1 op
+
+2.udpxy替换msd_lite
+
+3.adguardhome 放置路径/opt/adg/ 端口3000 admin/admin
+
+4.添加chongshengB/rt-n56u菜单定制。
+
+5.e8820s 无线led灯显示修复。
+
