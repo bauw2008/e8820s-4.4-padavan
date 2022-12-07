@@ -49,7 +49,7 @@ on:
         - 'XY-C1'
         - 'ZTE-E8820S'
         - 'WE410443-TC'
-        default: 'K2P'
+        default: 'ZTE-E8820S'
       release:
         type: boolean
         description: 'upload to release'
