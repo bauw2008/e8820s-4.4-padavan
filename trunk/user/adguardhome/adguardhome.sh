@@ -147,11 +147,13 @@ fi
 
 
 start_adg(){
-        chmod 755 /opt/adg/AdGuardHome
+        #chmod 755 /opt/adg/AdGuardHome
+	chmod 755 /media/AiDisk_a1/adg/AdGuardHome
         mkdir -p /tmp/AdGuardHome
 	mkdir -p /etc/storage/AdGuardHome
 	if [ ! -f "/tmp/AdGuardHome/AdGuardHome" ]; then
-	cp /opt/adg/AdGuardHome /tmp/AdGuardHome/AdGuardHome
+	#cp /opt/adg/AdGuardHome /tmp/AdGuardHome/AdGuardHome
+	cp /media/AiDisk_a1/adg/AdGuardHome /tmp/AdGuardHome/AdGuardHome
 
 	fi
 	getconfig
