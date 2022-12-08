@@ -11,7 +11,7 @@
  - ttyd 替换 Web 控制台
  - ip 10.0.0.1 admin/admin
  - hosts：10.0.0.1 op
- - adguardhome 放路径/opt/adg/ 端口3000 admin/admin
+ - adguardhome 放置路径u盘根目录 /adg/ 端口3000 root/root
  - 添加chongshengB/rt-n56u菜单定制。
  - e8820s无线led灯显示修复。
 
