@@ -108,7 +108,7 @@ filters:
   url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
   name: AdGuard Simplified Domain Names filter
   id: 1
-  - enabled: true
+- enabled: true
   url: https://adaway.org/hosts.txt
   name: AdAway
   id: 2
@@ -143,6 +143,7 @@ EEE
 	chmod 755 "$adg_file"
 fi
 }
+
 
 
 start_adg(){
