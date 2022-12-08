@@ -146,7 +146,7 @@ fi
 
 
 start_adg(){
-        chmod 777 /opt/adg/AdGuardHome
+        chmod 755 /opt/adg/AdGuardHome
         mkdir -p /tmp/AdGuardHome
 	mkdir -p /etc/storage/AdGuardHome
 	if [ ! -f "/tmp/AdGuardHome/AdGuardHome" ]; then
